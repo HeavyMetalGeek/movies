@@ -1,0 +1,54 @@
+  @import url(https://bootswatch.com/4/darkly/bootstrap.min.css);
+  @import url(https://fonts.googleapis.com/css?family=Orbitron:500,700);
+  @import url(https://fonts.googleapis.com/css?family=Bowlby+One+SC);
+  @import url(https://fonts.googleapis.com/css?family=Cabin+Sketch);
+  
+/*html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}*/
+.genre {
+  padding-left: 1em;
+}
+.backdrop:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:  linear-gradient(to top, rgba(19,21,25,0.5), rgba(19,21,25,0.5)), url('../img/calculator_old.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.jumbotron {
+  margin-top: 20vh;
+  background-color: rgba(43,187,173,0.9);
+  position: relative;
+  z-index: 10;
+  font-family: 'Cabin Sketch';
+  font-weight: bold;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  padding: 0.5rem;
+}
+
+.navbar-brand{
+  font-family: 'Bowlby One SC';
+}
+
+.movie-main {
+  padding-top: 5rem;
+}

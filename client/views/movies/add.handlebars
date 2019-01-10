@@ -1,0 +1,41 @@
+<div class="card card-body">
+  <h3>Add Movie</h3>
+  <form action="/movies" method="post">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" name="title" value="{{title}}" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="title">Year</label>
+      <input type="text" name="year" value="{{year}}" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="title">Rating</label>
+      <select type="text" class="form-control" id="rating" name="rating" required>
+        <option>{{rating}}</option>
+        <option>G</option>
+        <option>PG</option>
+        <option>PG-13</option>
+        <option>R</option>
+        <option>NC-17</option>
+        <option>NR</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <select type="text" class="form-control" id="genre" name="genre" required>
+        <option>{{genre}}</option>
+        <option>Action/Adventure</option>
+        <option>Animation</option>
+        <option>Comedy</option>
+        <option>Drama</option>
+        <option>Horror</option>
+        <option>Non-Fiction</option>
+        <option>Science-Fiction/Fantasy</option>
+        <option>Western</option>
+      </select>
+      <!--<input type="text" name="genre" value="{{genre}}" class="form-control" required>-->
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
