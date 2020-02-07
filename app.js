@@ -14,7 +14,8 @@ const movieRoutes = require('./api/routes/movies');
 const app = express();
 
 mongoose.connect(config.MONGODB_URI, {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
 // Handlebars

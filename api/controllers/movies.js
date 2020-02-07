@@ -181,6 +181,57 @@ exports.movies_delete_one = (req, res, next) => {
     });
 }
 
+/* UI ONLY functions */
+exports.movies_add = (req, res, next) => {
+  res.render('movies/add');
+}
+
+exports.movies_edit = (req, res, next) => {
+  Movie.findOne({_id: req.params.id})
+    .then(movie => {
+      res.render('movies/edit', {
+        movie:movie
+      });
+    })
+}
+
+exports.movies_patch = (req, res, next) => {
+  const id = req.params.movieId;
+  const updateOps = {};
+  for (const ops in req.body) {
+    updateOps[ops] = req.body[ops];
+  }
+  Movie.updateOne({_id: id}, {$set: updateOps})
+    .exec()
+    .then(result => {
+      console.log(result);
+      req.flash('success_msg', `${req.body.title} successfully changed.`);
+      res.redirect('/movies');
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({
+        error: err
+      });
+    });
+}
+
+exports.movies_delete = (req, res, next) => {
+  const id = req.params.movieId;
+  Movie.deleteOne({_id:id})
+    .exec()
+    .then(result => {
+      req.flash('success_msg', `${req.body.title} successfully deleted.`);
+      res.redirect('/movies');
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({
+        error: err
+      });
+    });
+}
+
 function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };

@@ -52,3 +52,11 @@
 .movie-main {
   padding-top: 5rem;
 }
+
+.hover-hide .hover-hide-col {
+  visibility: hidden;
+}
+
+.hover-hide:hover .hover-hide-col {
+  visibility: visible;
+}

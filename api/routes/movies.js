@@ -8,12 +8,12 @@ const MoviesController = require('../controllers/movies');
 
 // Movies collection
 router.get('/', MoviesController.movies_get_many);
-router.get('/add', (req, res, next) => {res.render('movies/add')});
+router.get('/add', MoviesController.movies_add);
 router.post('/', MoviesController.movies_post);
 
 // Individual movies
-router.get('/:movieId', MoviesController.movies_get_one);
-router.patch('/:movieId', MoviesController.movies_patch_one);
-router.delete('/:movieId', MoviesController.movies_delete_one);
+router.get('/edit/:id', MoviesController.movies_edit);
+router.patch('/:movieId', MoviesController.movies_patch);
+router.delete('/:movieId', MoviesController.movies_delete);
 
 module.exports = router;
